@@ -8,8 +8,8 @@ sh /home/biraj/.config/bspwm/monitormg.sh
 sh /home/biraj/.config/bspwm/autostart.sh
 
 #----Monitor management----#
-bspc monitor $monitor -d 1 2 3 4 5 6 7 8 9 
-bspc monitor $monitor1 -d 1 2 3 4 5 6 7 8 9
+bspc monitor $monitor -d I II III IV V VI VII VIII IX 
+bspc monitor $monitor1 -d I II III IV V VI VII VIII IX 
 
 #----BSPWM stylying----#
 bspc config border_radius       15
