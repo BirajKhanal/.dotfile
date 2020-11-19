@@ -2,6 +2,7 @@ let mapleader="\<Space>"
 
 " basics
 syntax on
+set nocompatible
 set autoindent
 set number
 set relativenumber
@@ -21,12 +22,12 @@ set hlsearch!
 set spell
 set spelllang=en_us
 set shell=/usr/bin/zsh
+
 "theme
 if (has("termguicolors"))
  set termguicolors
 endif
 
-" Theme
 " colorscheme OceanicNext
 " let g:tokyonight_style = 'storm' " available: night, storm
 " let g:tokyonight_enable_italic = 1
@@ -39,7 +40,10 @@ let g:lightline={
 " latex pdf live preview changed to zathura
 let g:livepreview_previewer = 'zathura'
 
-" hexokinase
+" vimwiki using md as file extention
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
 let g:Hexokinase_highlighters = ['backgroundfull']
 let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,triple_hex'
 
@@ -108,6 +112,10 @@ Plug 'xuhdev/vim-latex-live-preview'
 
 " color viewer
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
+" vimwiki
+Plug 'vimwiki/vimwiki'
+
 
 call plug#end()
 

@@ -88,7 +88,7 @@ line-size = 3
 line-color = #689d6a
 
 spacing = 1
-padding = 1
+adding = 1
 module-margin = 2
 
 font-0 = mononoki Nerd Font:size=10;1
@@ -184,6 +184,13 @@ label-empty-padding = 1
 
 ; Separator in between workspaces
 label-separator = " "
+
+[module/tray]
+type = internal/tray
+
+tray-position = right
+tray-padding = 0
+
 
 [module/mpd]
 type = internal/mpd
