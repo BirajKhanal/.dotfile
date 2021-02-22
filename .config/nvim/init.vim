@@ -38,7 +38,7 @@ let g:lightline={
    \}
 
 " latex pdf live preview changed to zathura
-let g:livepreview_previewer = 'zathura'
+" let g:livepreview_previewer = 'zathura'
 
 " vimwiki using md as file extention
 let g:vimwiki_list = [{'path': '~/vimwiki/',
@@ -75,7 +75,22 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/indentpython.vim'
 
 " for suggestion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" pynvim and jedi required to work
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
+" for buffer and path completion
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+
+" auto complete for python
+Plug 'ncm2/ncm2-jedi'
+
+" r environment in nvim
+Plug 'jalvesaq/Nvim-R'
+
+" auto complete for r
+Plug 'gaalcaras/ncm-R'
 
 "for icons
 Plug 'ryanoasis/vim-devicons'
@@ -85,11 +100,6 @@ Plug 'tpope/vim-surround'
 
 " indent 
 Plug 'yggdroot/indentline'
-
-" for html tag
-Plug 'andrewradev/tagalong.vim'
-Plug 'alvan/vim-closetag'
-Plug 'mattn/emmet-vim'
 
 " for commenting
 Plug 'tpope/vim-commentary'
@@ -102,13 +112,10 @@ Plug 'prettier/vim-prettier'
 Plug 'tell-k/vim-autopep8'
 
 " theme
-Plug 'mhartington/oceanic-next'
-Plug 'ghifarit53/tokyonight-vim'
 Plug 'sonph/onehalf'
 
-" latex plugin
-Plug 'lervag/vimtex'
-Plug 'xuhdev/vim-latex-live-preview'
+" markdown preview
+Plug 'iamcco/markdown-preview.nvim'
 
 " color viewer
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -206,19 +213,12 @@ tnoremap <Esc> <C-\><C-n>
 " toggle search highlight
 nnoremap <F3> :set hlsearch!<CR>
 
-" coc config
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
 
-autocmd FileType json syntax match Comment +\/\/.\+$+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
