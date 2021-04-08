@@ -7,7 +7,7 @@ super + Return
 
 # lockscreen
 alt + ctrl + l
-    betterlockscreen -l blur
+    alacritty -e dm-tool lock 
 
 # htop
 ctrl + alt + x 

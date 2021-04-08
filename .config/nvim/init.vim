@@ -86,12 +86,6 @@ Plug 'ncm2/ncm2-path'
 " auto complete for python
 Plug 'ncm2/ncm2-jedi'
 
-" r environment in nvim
-Plug 'jalvesaq/Nvim-R'
-
-" auto complete for r
-Plug 'gaalcaras/ncm-R'
-
 "for icons
 Plug 'ryanoasis/vim-devicons'
 
