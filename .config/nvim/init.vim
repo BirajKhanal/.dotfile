@@ -75,16 +75,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/indentpython.vim'
 
 " for suggestion
-" pynvim and jedi required to work
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-
-" for buffer and path completion
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-
-" auto complete for python
-Plug 'ncm2/ncm2-jedi'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "for icons
 Plug 'ryanoasis/vim-devicons'
@@ -207,12 +198,16 @@ tnoremap <Esc> <C-\><C-n>
 " toggle search highlight
 nnoremap <F3> :set hlsearch!<CR>
 
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-
-" Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"

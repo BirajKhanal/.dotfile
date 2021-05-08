@@ -84,8 +84,9 @@ plugins=(
 	pip
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-	django
     extract
+    docker
+    docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,25 +123,10 @@ alias vrc="nvim ~/.config/nvim/init.vim"
 alias qcon="nvim ~/.config/qtile/config.py"
 alias backup="sh /home/biraj/scripts/update.sh"
 alias neovi="nvim ~/.config/nvim/init.vim"
+alias huion="sh /home/biraj/scripts/huion_config.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/biraj/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/biraj/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/biraj/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/biraj/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
