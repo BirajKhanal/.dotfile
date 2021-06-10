@@ -17,3 +17,6 @@ xsetwacom set "HUION Huion Tablet Pad pad" "Button" "17" "key +ctrl +shift f -sh
 
 # For Stylus
 xsetwacom set "HUION Huion Tablet stylus" "Button" "3" "button +3 -3"
+
+# To use the tablet in secondary monitor
+xinput map-to-output "HUION Huion Tablet stylus" HDMI-1-1
