@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/biraj/.dotfile/.config/sxhkd'
+let g:netrw_dirhist_9='/home/biraj/.dotfile/.config/bspwm'
+let g:netrw_dirhist_8='/home/biraj/.dotfile/.config/polybar'
 let g:netrw_dirhist_7='/home/biraj'
 let g:netrw_dirhist_6='/home/biraj/project/dev/Easy-Auction/app/api/api_v1/endpoints'
 let g:netrw_dirhist_5='/home/biraj/project/dev/Easy-Auction/app/api/api_v1'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_4='/home/biraj/project/dev/Easy-Auction/app/api'
 let g:netrw_dirhist_3='/home/biraj/project/dev/Easy-Auction'
 let g:netrw_dirhist_2='/home/biraj/project/dev/Easy-Auction/app/crud'
 let g:netrw_dirhist_1='/home/biraj/project/dev/Easy-Auction'
-let g:netrw_dirhist_0='/home/biraj/project/dev/Easy-Auction/app/crud/user'
-let g:netrw_dirhist_9='/home/biraj/project/dev/Easy-Auction'
-let g:netrw_dirhist_8='/home/biraj/project/dev/Easy-Auction/app/crud/sell'

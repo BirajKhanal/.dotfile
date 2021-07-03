@@ -10,7 +10,8 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/biraj/.oh-my-zsh"
-export VISUAL EDITOR=nvim
+export VISUAL EDITOR=neovi
+export EDITOR=$PATH:/usr/bin/nvim
 export PATH=$PATH:/home/biraj/.local/bin
 export PATH=$PATH:/home/biraj/julia/bin
 # Set name of the theme to load --- if set to "random", it will
@@ -125,9 +126,26 @@ alias qcon="nvim ~/.config/qtile/config.py"
 alias backup="sh /home/biraj/scripts/update.sh"
 alias neovi="nvim ~/.config/nvim/init.vim"
 alias huion="sh /home/biraj/scripts/huion_config.sh"
+alias tmux="tmux -u"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/biraj/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/biraj/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/biraj/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/biraj/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

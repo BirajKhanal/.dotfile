@@ -8,10 +8,8 @@ if [ $card == "NVIDIA" ]
 then
     source ~/.screenlayout/screen.sh & 
     feh --bg-scale /home/biraj/.config/wallpaper.jpg &
-    xinput set-prop 12 336 1
 else
     feh --bg-scale /home/biraj/.config/wallpaper.jpg &
-    xinput set-prop 12 308 1
 fi
 
 if [ $card == "NVIDIA" ] && [ $display == "eDP-1" ] && [ $display1="HDMI-1" ]

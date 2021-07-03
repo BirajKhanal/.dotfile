@@ -9,6 +9,8 @@ killall sxhkd
 killall dunst
 killall picom
 killall flameshot
+killall redshift-gtk
+killall redshift
 
 #----Autostart commands----#
 
@@ -17,11 +19,10 @@ sxhkd &
 polybar bar1 &
 polybar bar2 &
 nm-applet &
-xset led on
-xinput set-prop 12 341 1
-xinput set-prop 12 342 1
+xmodmap ~/.Xmodmap
 picom --config ~/.config/picom/picom.conf &
-optimus-manager-qt &
 flameshot &
 dunst &
 udiskie &
+redshift-gtk &
+xsetroot -xcf ~/.icons/oreo_white_cursors/cursors/default 1

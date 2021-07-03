@@ -7,11 +7,19 @@ super + Return
 
 # lockscreen
 alt + ctrl + l
-    alacritty -e dm-tool lock 
+    sh /home/biraj/scripts/lock_and_blur.sh
 
 # htop
 ctrl + alt + x 
     alacritty -e htop
+
+# vimwiki
+super + n
+    alacritty --class 'vimwiki' --title 'vimwiki' -e nvim -c VimwikiIndex
+
+# vimwiki diary
+super + d
+    alacritty --class 'vimwikidiary' --title 'vimwikidiary' -e nvim -c VimwikiMakeDiaryNote
 
 # browser launcher
 super + b
@@ -19,7 +27,7 @@ super + b
 
 # launch ranger
 super + r
-    alacritty -e ranger
+    alacritty --class 'ranger' --title 'ranger' -e ranger
 
 # program launcher
 super + ctrl + Return
