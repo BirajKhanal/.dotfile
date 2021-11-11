@@ -9,7 +9,6 @@ killall sxhkd
 killall dunst
 killall picom
 killall flameshot
-killall redshift-gtk
 killall redshift
 
 #----Autostart commands----#
@@ -24,5 +23,5 @@ picom --config ~/.config/picom/picom.conf &
 flameshot &
 dunst &
 udiskie &
-redshift-gtk &
+redshift &
 xsetroot -xcf ~/.icons/oreo_white_cursors/cursors/default 1
